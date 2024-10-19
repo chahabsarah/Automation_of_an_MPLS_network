@@ -1,0 +1,67 @@
+set version 12.1R1.9
+set system root-authentication encrypted-password "$1$TSBtLrJt$8FPeWKVeqxPtf1sxZHHrf/"
+set system login user admin uid 2000
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$1$RrNPyhpc$4dSJIO8MYvilEIsSplSKi1"
+set system services ssh root-login allow
+set system services telnet
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set interfaces em2 unit 0 family inet address 11.0.0.1/30
+set interfaces em2 unit 0 family mpls
+set interfaces em3 unit 0 family inet address 10.0.0.1/30
+set interfaces em3 unit 0 family mpls
+set interfaces em4 unit 0 family inet address 14.0.0.1/30
+set interfaces em5 unit 0 family inet address 15.0.0.1/30
+set interfaces lo0 unit 0 family inet address 1.1.1.1/32
+set routing-options router-id 1.1.1.1
+set routing-options autonomous-system 100
+set protocols mpls interface em3.0
+set protocols mpls interface em2.0
+set protocols bgp group ibgp type internal
+set protocols bgp group ibgp local-address 1.1.1.1
+set protocols bgp group ibgp family inet unicast
+set protocols bgp group ibgp family inet-vpn unicast
+set protocols bgp group ibgp family route-target
+set protocols bgp group ibgp neighbor 4.4.4.4 peer-as 100
+set protocols ospf area 0.0.0.0 interface em3.0
+set protocols ospf area 0.0.0.0 interface em2.0
+set protocols ospf area 0.0.0.0 interface lo0.0
+set protocols ldp interface em2.0
+set protocols ldp interface em3.0
+set policy-options policy-statement AB_Exp term static from protocol static
+set policy-options policy-statement AB_Exp term static then community set VRF_AB
+set policy-options policy-statement AB_Exp term static then accept
+set policy-options policy-statement AB_Exp term direct from protocol direct
+set policy-options policy-statement AB_Exp term direct then community set VRF_AB
+set policy-options policy-statement AB_Exp term direct then accept
+set policy-options policy-statement AB_Imp term bgp from protocol bgp
+set policy-options policy-statement AB_Imp term bgp from community VRF_AB
+set policy-options policy-statement AB_Imp term bgp then accept
+set policy-options policy-statement CD_Exp term static from protocol static
+set policy-options policy-statement CD_Exp term static then community set VRF_CD
+set policy-options policy-statement CD_Exp term static then accept
+set policy-options policy-statement CD_Exp term direct from protocol direct
+set policy-options policy-statement CD_Exp term direct then accept
+set policy-options policy-statement CD_Imp term bgp from protocol bgp
+set policy-options policy-statement CD_Imp term bgp from community VRF_CD
+set policy-options policy-statement CD_Imp term bgp then accept
+set policy-options community VRF_AB members target:100:10
+set policy-options community VRF_CD members target:100:20
+set routing-instances AB instance-type vrf
+set routing-instances AB interface em4.0
+set routing-instances AB route-distinguisher 1.1.1.1:100
+set routing-instances AB vrf-import AB_Imp
+set routing-instances AB vrf-export AB_Exp
+set routing-instances AB vrf-table-label
+set routing-instances AB routing-options static route 5.5.5.5/32 next-hop 14.0.0.2
+set routing-instances CD instance-type vrf
+set routing-instances CD interface em5.0
+set routing-instances CD route-distinguisher 1.1.1.1:200
+set routing-instances CD vrf-import CD_Imp
+set routing-instances CD vrf-export CD_Exp
+set routing-instances CD vrf-table-label
+set routing-instances CD routing-options static route 6.6.6.6/32 next-hop 15.0.0.2
+

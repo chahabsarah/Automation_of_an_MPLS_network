@@ -1,0 +1,23 @@
+set version 12.1R1.9
+set system root-authentication encrypted-password "$1$cZmDDdFb$ZP7Bb8RoSI43YYxeV52/31"
+set system login user admin uid 2000
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$1$LwsSM0mk$pw9jsprqhOwBILv5VVE461"
+set system services ssh root-login allow
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set interfaces em2 unit 0 family inet address 11.0.0.2/30
+set interfaces em2 unit 0 family mpls
+set interfaces em3 unit 0 family inet address 14.0.0.1/30
+set interfaces em3 unit 0 family mpls
+set interfaces lo0 unit 0 family inet address 3.3.3.3/32
+set routing-options router-id 2.2.2.2
+set protocols mpls interface em3.0
+set protocols mpls interface em2.0
+set protocols ospf area 0.0.0.0 interface em3.0
+set protocols ospf area 0.0.0.0 interface em2.0
+set protocols ospf area 0.0.0.0 interface lo0.0
+set protocols ldp interface em8.0
+set protocols ldp interface em5.0
