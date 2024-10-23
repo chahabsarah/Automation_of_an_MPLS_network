@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from logs.views import recuperer_logs_view
 
 urlpatterns = [
     path('logs/routeur1/', views.recuperer_et_filtrer_logs_routeur_1, name='routeur_1_logs'),
@@ -11,5 +12,6 @@ urlpatterns = [
     path('logs/routeur7/', views.recuperer_et_filtrer_logs_routeur_7, name='routeur_7_logs'),
     path('logs/routeur8/', views.recuperer_et_filtrer_logs_routeur_8, name='routeur_8_logs'),
     path('logs/all/', views.get_all_logs, name='get_all_logs'),
+    path('recuperer-logs/', recuperer_logs_view, name='recuperer_logs'),
 
 ]

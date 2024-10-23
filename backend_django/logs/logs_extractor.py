@@ -42,11 +42,13 @@ def enregistrer_logs(routeur, logs_filtrés):
     """Enregistrer les logs filtrés dans un fichier .txt"""
     nom_fichier = f"logs_{routeur['host']}.txt"
     
-    with open(nom_fichier, 'a') as f:
+    # Ouvrir le fichier en mode écriture pour vider son contenu
+    with open(nom_fichier, 'w') as f:  # Changez 'a' en 'w'
         for log in logs_filtrés:
             f.write(log + '\n')
     
     print(f"Logs enregistrés dans {nom_fichier}")
+
 
 def recuperer_et_filtrer_logs_1():
     routeur_1 = {
@@ -147,3 +149,14 @@ def recuperer_et_filtrer_logs_8():
     if logs:
         logs_filtrés = filtrer_erreurs_warnings(logs)
         enregistrer_logs(routeur_8, logs_filtrés)
+        
+def recuperer_et_filtrer_tous_les_logs():
+    """Appeler toutes les fonctions de récupération et de filtrage des logs."""
+    recuperer_et_filtrer_logs_1()
+    recuperer_et_filtrer_logs_2()
+    recuperer_et_filtrer_logs_3()
+    recuperer_et_filtrer_logs_4()
+    recuperer_et_filtrer_logs_5()
+    recuperer_et_filtrer_logs_6()
+    recuperer_et_filtrer_logs_7()
+    recuperer_et_filtrer_logs_8()

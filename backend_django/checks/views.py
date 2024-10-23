@@ -1,24 +1,25 @@
 from django.http import HttpResponse
 from netmiko import ConnectHandler
 from django.http.response import JsonResponse
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 
-# routeurs R(type cisco) :
+
 def router_interfaces_r1(request):
     r1 = {
         'device_type': 'cisco_ios_telnet',
         'host': '127.0.0.1',
         'port': 5004,
-        'username': 'votre_nom_utilisateur',  # Remplacez par votre nom d'utilisateur
-        'password': 'votre_mot_de_passe',      # Remplacez par votre mot de passe
+        'username': 'votre_nom_utilisateur',
+        'password': 'votre_mot_de_passe',
     }
-    
-    target_ip = '9.9.9.9' #3al r3
-    try:
-        # Connexion au routeur
-        connection = ConnectHandler(**r1)
 
+    target_ip = '9.9.9.9'
+    try:
+        connection = ConnectHandler(**r1)
         output = connection.send_command('show ip interface brief')
         output2 = connection.send_command(f'ping {target_ip}')
         return JsonResponse({
@@ -27,9 +28,8 @@ def router_interfaces_r1(request):
         })
         
     except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
+        logger.error(f"Error connecting to router R1: {e}")
+        return JsonResponse({'error': str(e)}, status=500)
 
 def router_interfaces_r2(request):
     r2 = {

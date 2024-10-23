@@ -5,7 +5,7 @@ from logs.logs_extractor import recuperer_et_filtrer_logs_8, \
     recuperer_et_filtrer_logs_1, recuperer_et_filtrer_logs_2, \
     recuperer_et_filtrer_logs_3, recuperer_et_filtrer_logs_4, \
    recuperer_et_filtrer_logs_5, recuperer_et_filtrer_logs_6, \
-    recuperer_et_filtrer_logs_7
+    recuperer_et_filtrer_logs_7, recuperer_et_filtrer_tous_les_logs
 
 
 def recuperer_et_filtrer_logs_routeur_1(request):
@@ -56,3 +56,11 @@ def get_all_logs(request):
         return JsonResponse({'logs': logs})
     except FileNotFoundError:
         return JsonResponse({'error': 'Log file not found.'}, status=404)
+    
+def recuperer_logs_view(request):
+    """Vue pour récupérer les logs."""
+    try:
+        recuperer_et_filtrer_tous_les_logs()  # Appeler votre fonction
+        return JsonResponse({'status': 'success', 'message': 'Logs récupérés et filtrés avec succès.'})
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)})

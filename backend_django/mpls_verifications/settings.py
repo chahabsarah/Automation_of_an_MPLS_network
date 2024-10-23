@@ -125,6 +125,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:4200",
+]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
 ]
