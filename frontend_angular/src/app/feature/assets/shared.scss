@@ -1,0 +1,98 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    padding: 0.4em 0.4em 0 0.4em !important;
+  }
+
+  ::ng-deep .mat-form-field {
+    width: 100%;
+    margin-top: 0% !important;
+  }
+
+  ::ng-deep .mat-checkbox {
+    margin-left: 40px;
+    margin-top: 5px;
+  }
+  ::ng-deep .mat-radio-button {
+    margin-left: 40px;
+    margin-top: 5px;
+  }
+.mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 0.25em 0 0.2em;
+}
+
+
+.mat-drawer-container {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.white-icon {
+    color: white;
+}
+
+.mat-card-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.success-toast {
+  background-color: #43a047; /* Green */
+}
+
+.error-toast {
+  background-color: #d32f2f; /* Red */
+}
+
+.frs-ra-top-button {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.frs-ra-action-button {
+  text-align: right;
+}
+
+.mat-expansion-panel-header {
+  font-size: 13px;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 13px;
+}
+
+.mat-table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+}
+
+table.mat-table {
+  margin-left: 0px;
+}
+
+.mat-cell,
+.mat-header-cell {
+  max-width: 50px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.mat-cell.total-column {
+  font-weight: bold;
+  background-color: #dddddd;
+}
+.mat-header-cell.total-header {
+  background-color: #dddddd;
+  font-weight: 700;
+}
+
+.mat-expansion-panel {
+  margin-right: 15px;
+}
+
+.frs-ra-table {
+  margin-bottom: 20px;
+}
+.ra-help-text {
+  font-size: 13px;
+  color: #555555;
+}

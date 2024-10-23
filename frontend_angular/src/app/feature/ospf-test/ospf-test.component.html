@@ -1,0 +1,33 @@
+<div *ngIf="ospfData" style="font-family: Arial, sans-serif; margin: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+  <h4 style="color: #333;font-weight:bold;fint-size:20px;">OSPF Summary Table:</h4>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+    <thead>
+      <tr style="background-color: orange; color: white;">
+        <th style="border: 1px solid #ddd; padding: 12px;">Interface</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">IP Address</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of parsedospf" style="transition: background-color 0.3s;">
+        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">{{ item.interface }}</td>
+        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">{{ item.ip }}</td>
+        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">{{ item.protocol }}</td>
+      </tr>
+      <tr *ngIf="!parsedospf.length">
+        <td colspan="3" style="border: 1px solid #ddd; padding: 12px; text-align: center; color: #777;">No OSPF data available.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="color: #333; margin-top: 20px; font-weight:bold;">Console View:</h3>
+  <div style="background-color: #333; color: orange; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+    <pre>{{ ospfData.ospf }}</pre> <!-- Display the OSPF configuration in JSON format -->
+  </div>
+
+  <!-- If there's an error, display it -->
+  <div *ngIf="errorMessage" style="color: red; margin-top: 15px; border: 1px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
+    <h3>Error:</h3>
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

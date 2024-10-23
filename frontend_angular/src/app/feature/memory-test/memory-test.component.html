@@ -1,0 +1,51 @@
+<div>
+  <h2>Informations Memoire des Routeurs</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div *ngIf="memoDataJ1" class="console-view">
+    <h3>Routeur J1</h3>
+    <pre>{{ memoDataJ1 }}</pre>
+  </div>
+
+  <div *ngIf="memoDataJ2" class="console-view">
+    <h3>Routeur J2</h3>
+    <pre>{{ memoDataJ2 }}</pre>
+  </div>
+
+  <div *ngIf="memoDataJ3" class="console-view">
+    <h3>Routeur J3</h3>
+    <pre>{{ memoDataJ3 }}</pre>
+  </div>
+
+  <div *ngIf="memoDataJ4" class="console-view">
+    <h3>Routeur J4</h3>
+    <pre>{{ memoDataJ4 }}</pre>
+  </div>
+</div>
+<style>
+  .console-view {
+    background-color: #1e1e1e; /* Couleur de fond similaire à celle d'une console */
+    color: orange; /* Texte vert, typique des interfaces de console */
+    font-family: "Courier New", Courier, monospace; /* Police de caractères type console */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ajout d'un léger effet d'ombre */
+  }
+
+  .console-view h3 {
+    color: #ffffff; /* Titre en blanc pour contraste */
+    margin-bottom: 5px;
+  }
+
+  .console-view pre {
+    background-color: #1e1e1e; /* Même fond que la div */
+    color: orange; /* Texte vert */
+    overflow-x: auto; /* Pour permettre un défilement horizontal si nécessaire */
+    padding: 10px;
+    margin: 0;
+    border-radius: 3px;
+  }
+
+</style>

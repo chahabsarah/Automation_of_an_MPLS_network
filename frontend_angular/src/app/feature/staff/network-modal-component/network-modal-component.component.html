@@ -1,0 +1,78 @@
+
+<form [formGroup]="form">
+    <div mat-dialog-content style="width: 357px;">
+         <h1>New Client</h1>
+         <div style="display: ruby;" class="modal-container">
+             <mat-grid-tile>
+                 <div class="text-container">
+                     <mat-form-field appearance="fill">
+                         <mat-label>Client Name</mat-label>
+                         <input matInput type="text" placeholder="Client Name" formControlName="clientname">
+                     </mat-form-field>
+                 </div>
+             </mat-grid-tile>
+             <mat-grid-list cols="2" rowHeight="100px" style="margin-right: 10px">
+                 <div class="form-field">
+                     <div class="text-container">
+                         <mat-form-field appearance="fill">
+                             <mat-label>Interface</mat-label>
+                             <input matInput type="text" placeholder="Interface" formControlName="interface">
+                         </mat-form-field>
+                     </div>
+                 </div>
+                 <mat-grid-tile>
+                     <div class="text-container">
+                         <mat-form-field appearance="fill">
+                             <mat-label>ip_address</mat-label>
+                             <input matInput type="text" placeholder="ip_address" formControlName="ip_address">
+                         </mat-form-field>
+                     </div>
+                 </mat-grid-tile>
+                 <mat-grid-tile>
+                     <div class="text-container">
+                         <mat-form-field appearance="fill">
+                             <mat-label>subnet</mat-label>
+                             <input matInput type="text" placeholder="subnet" formControlName="subnet">
+                         </mat-form-field>
+                     </div>
+                 </mat-grid-tile>
+                 <mat-grid-tile>
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Virtual Routing and Forwarding</mat-label>
+                            <input matInput type="text" placeholder="vrf" formControlName="vrf">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Members target</mat-label>
+                            <input matInput type="text" placeholder="Members target" formControlName="members_target">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Route distinguisher</mat-label>
+                            <input matInput type="text" placeholder="Route distinguisher" formControlName="route_distinguisher">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+             </mat-grid-list>
+             <mat-grid-list class="form-footer">
+                 <mat-grid-tile class="form-footer-container">
+                     <mat-dialog-actions>
+                         <div style="display: flex; flex-direction: row; justify-content: flex-end;">
+                             <button (click)="onSubmit()" style="margin-right: 10px !important;" id="ecase_generaldialog_yes"
+                                 class="eCase-dialog-positive-action-button" mat-raised-button>Connect</button>
+                             <button (click)="cancel()" id="ecase_generaldialog_no" mat-raised-button color="warn">Cancel</button>
+                         </div>
+                     </mat-dialog-actions>
+                 </mat-grid-tile>
+             </mat-grid-list>
+         </div>
+     </div>
+ 
+ </form>

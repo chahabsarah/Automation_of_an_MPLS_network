@@ -1,0 +1,56 @@
+.console-container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Courier New', Courier, monospace;  /* Police de type console */
+}
+
+.console {
+  background-color: #1e1e1e;
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.console pre {
+  margin: 0;
+  white-space: pre-wrap; /* Conserve les sauts de ligne et espaces */
+  word-wrap: break-word; /* Gère les longues lignes */
+}
+
+h2 {
+  color: black;
+  text-transform: uppercase;
+}
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.summary-table th, .summary-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.summary-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.summary-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.summary-table tr:hover {
+  background-color: #ddd;
+}
+
+.test-result h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}

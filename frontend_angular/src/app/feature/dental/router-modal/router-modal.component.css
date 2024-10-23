@@ -1,0 +1,20 @@
+.container {
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 40px;
+  }
+  

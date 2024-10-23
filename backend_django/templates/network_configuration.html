@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Configurations</title>
+</head>
+<body>
+    <h1>Network Configurations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Interface</th>
+                <th>IP Address</th>
+                <th>Subnet</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for configuration in configurations %}
+            <tr>
+                <td>{{ configuration.clientname }}</td>
+                <td>{{ configuration.interface }}</td>
+                <td>{{ configuration.ip_address }}</td>
+                <td>{{ configuration.subnet }}</td>
+                <td>{{ configuration.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+#sidebar {
+  background-color: black;
+  width: 250px;         /* Largeur fixe sur les grands écrans */
+  height: 100vh;        /* Hauteur égale à 100% de la fenêtre */
+  position: fixed;      /* Sidebar fixée à gauche */
+  overflow-y: auto;     /* Permettre le défilement */
+  transition: transform 0.3s ease;  /* Ajoute une transition pour un effet lisse */
+}
+
+#layout-wrapper {
+  display: flex;        /* Aligner le sidebar et le contenu */
+}
+
+/* Style pour les écrans plus petits (tablettes et téléphones) */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;       /* La sidebar occupe toute la largeur sur petits écrans */
+    position: absolute; /* Sidebar se superpose sur le contenu en position absolue */
+    height: 100vh;     /* Toujours pleine hauteur */
+    transform: translateX(-100%); /* Sidebar est cachée par défaut en dehors de l'écran */
+  }
+
+  #sidebar.open {
+    transform: translateX(0); /* Afficher la sidebar en la ramenant dans l'écran */
+  }
+
+  #layout-wrapper {
+    margin-left: 0;    /* Pas de marge à gauche sur petits écrans */
+  }
+
+  .root-container {
+    margin-left: 0;    /* Le contenu occupe tout l'espace disponible */
+  }
+}
+
+/* Bouton pour ouvrir/fermer la sidebar sur petits écrans */
+#vertical-hover {
+  display: none;
+  background-color: orange;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  #vertical-hover {
+    display: block;     /* Afficher le bouton sur les petits écrans */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+/* Style du lien de navigation */
+.navbar-nav .nav-link {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: orange;
+}

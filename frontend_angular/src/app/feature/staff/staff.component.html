@@ -1,0 +1,39 @@
+<mat-accordion>
+    <mat-expansion-panel>
+      <div class="frs-ra-top-button" [hidden]="isEditMode==true">
+        <button (click)="openModal('add')" mat-raised-button class="mat-focus-indicator eCase-dialog-positive-action-button mat-raised-button mat-button-base">Configure</button>
+      </div>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Existing Clients
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <table mat-table [dataSource]="combinedData" class="mat-elevation-z2 frs-ra-table">
+        <!-- Header and row definitions dynamically generated -->
+        <ng-container *ngFor="let col of tabs" [matColumnDef]="col.property">
+          <th mat-header-cell *matHeaderCellDef class="cell-left">
+            <span>{{ col.header }}</span>
+          </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="{'cell-left': col.property !== 'edit', 'cell-right': col.property === 'edit'}" [style.background-color]="col.property === 'status' && element.status === 'some_status_value' ? 'orange' : 'inherit'">
+            <span *ngIf="col.property !== 'edit'">{{element[col.property]}}</span>
+            <div *ngIf="col.property === 'edit'" class="cell-right-row">
+              <button mat-raised-button [matMenuTriggerFor]="menu" class="clickable-icon">
+                Action
+              </button>
+              <mat-menu #menu="matMenu">
+                <!-- Use mat-menu-item for the 'Delete' action -->
+                <button mat-menu-item (click)="deleteRouter(element.id)">
+                  delete
+                </button>
+              </mat-menu>
+            </div>
+          </td>
+        </ng-container>
+        <!-- Table header row with the defined columns -->
+        <tr mat-header-row *matHeaderRowDef="columnProperties"></tr>
+        <!-- Table rows -->
+        <tr mat-row *matRowDef="let row; columns: columnProperties"></tr>
+      </table>
+    </mat-expansion-panel>
+  </mat-accordion>
+  

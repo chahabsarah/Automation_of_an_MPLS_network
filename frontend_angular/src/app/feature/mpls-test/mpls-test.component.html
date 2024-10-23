@@ -1,0 +1,24 @@
+<div *ngIf="mplsSummaryData && mplsSummaryData.length > 0">
+  <h3>Résumé des routes MPLS</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Label</th>
+        <th>Next Hop</th>
+        <th>Interface Sortante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let route of mplsSummaryData">
+        <td>{{ route.label }}</td>
+        <td>{{ route.nextHop }}</td>
+        <td>{{ route.outgoingInterface }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="errorMessage">
+  <p style="color: red;">{{ errorMessage }}</p>
+</div>
+
+<pre>{{ consoleOutput }}</pre>

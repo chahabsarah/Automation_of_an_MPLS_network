@@ -1,0 +1,54 @@
+
+<form [formGroup]="form">
+   <div mat-dialog-content style="width: 357px;">
+        <h1>Add new router</h1>
+        <div style="display: ruby;" class="modal-container">
+            <mat-grid-tile>
+                <div class="text-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Host</mat-label>
+                        <input matInput type="text" placeholder="Host" formControlName="host">
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-list cols="2" rowHeight="100px" style="margin-right: 10px">
+                <div class="form-field">
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Port</mat-label>
+                            <input matInput type="text" placeholder="Port" formControlName="port">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <mat-grid-tile>
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Userename</mat-label>
+                            <input matInput type="text" placeholder="Userename" formControlName="username">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" placeholder="Password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list class="form-footer">
+                <mat-grid-tile class="form-footer-container">
+                    <mat-dialog-actions>
+                        <div style="display: flex; flex-direction: row; justify-content: flex-end;">
+                            <button (click)="onSubmit()" style="margin-right: 10px !important;" id="ecase_generaldialog_yes"
+                                class="eCase-dialog-positive-action-button" mat-raised-button>Connect</button>
+                            <button (click)="cancel()" id="ecase_generaldialog_no" mat-raised-button color="warn">Cancel</button>
+                        </div>
+                    </mat-dialog-actions>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+
+</form>

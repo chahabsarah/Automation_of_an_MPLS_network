@@ -1,0 +1,71 @@
+
+set interface em2 unit 0 family inet address 13.0.0.2/30
+set interface em3 unit 0 family inet address 12.0.0.2/30
+set interface lo0 unit 0 family inet address 4.4.4.4/32
+
+set routing-options router-id 4.4.4.4
+set protocols ospf area 0.0.0.0 interface em3
+set protocols ospf area 0.0.0.0 interface em2
+set protocols ospf area 0.0.0.0 interface lo0
+
+set routing-options autonomous-system 100
+set protocols bgp group ibgp type internal
+set protocols bgp group ibgp local-address 4.4.4.4
+set protocols bgp group ibgp neighbor 1.1.1.1 peer-as 100
+
+set protocols bgp group ibgp family inet unicast
+set protocols bgp group ibgp family inet-vpn unicast
+set protocols bgp group ibgp family route-target
+
+
+set routing-instances AB instance-type vrf
+set routing-instances AB route-distinguisher 1.1.1.1:100
+set routing-instances AB vrf-table-label
+
+set policy-options community VRF_AB members target:100:10
+set policy-options policy-statement AB_Exp term static from protocol static
+set policy-options policy-statement AB_Exp term static then community set VRF_AB
+set policy-options policy-statement AB_Exp term static then accept
+set policy-options policy-statement AB_Exp term direct from protocol direct
+set policy-options policy-statement AB_Exp term direct then community set VRF_AB
+set policy-options policy-statement AB_Exp term direct then accept
+set policy-options policy-statement AB_Imp term bgp from protocol bgp
+set policy-options policy-statement AB_Imp term bgp from community VRF_AB
+set policy-options policy-statement AB_Imp term bgp then accept
+set routing-instances AB vrf-import AB_Imp 
+set routing-instances AB vrf-export AB_Exp
+
+set routing-instances CD instance-type vrf
+set routing-instances CD route-distinguisher 1.1.1.1:200
+set routing-instances CD vrf-table-label
+
+
+set policy-options community VRF_CD members target:100:20
+set policy-options policy-statement CD_Exp term static from protocol static
+set policy-options policy-statement CD_Exp term static then community set VRF_CD
+set policy-options policy-statement CD_Exp term static then accept
+set policy-options policy-statement CD_Exp term direct from protocol direct
+set policy-options policy-statement CD_Exp term direct then community set VRF_CD
+set policy-options policy-statement CD_Exp term direct then accept
+set policy-options policy-statement CD_Imp term bgp from protocol bgp
+set policy-options policy-statement CD_Imp term bgp from community VRF_CD
+set policy-options policy-statement CD_Imp term bgp then accept
+set routing-instances CD vrf-import CD_Imp 
+set routing-instances CD vrf-export CD_Exp
+set routing-instances AB routing-options static route 9.9.9.9/32 next-hop 17.0.0.2
+set interfaces em4 unit 0 family inet address 17.0.0.1/30
+set routing-instances AB interface em4
+
+set routing-instances CD routing-options static route 8.8.8.8/32 next-hop 16.0.0.2
+set interfaces em5 unit 0 family inet address 16.0.0.1/30
+set routing-instances CD interface em5
+
+set interfaces em3 unit 0 family mpls
+set protocols mpls interface em3
+set protocols ldp interface em3
+
+set interfaces em2 unit 0 family mpls
+set protocols mpls interface em2
+set protocols ldp interface em2
+
+

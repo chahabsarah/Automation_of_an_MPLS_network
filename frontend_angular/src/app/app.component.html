@@ -1,0 +1,209 @@
+<div *ngIf="!isLoginPage()" class="root-container"  >
+  <!-- Sidebar avec condition pour la page de login et contrôle de l'ouverture -->
+  <div *ngIf="!isLoginPage()" [class.open]="isSidebarOpen" id="sidebar">
+    <div id="layout-wrapper">
+      <div class="app-menu navbar-menu">
+        <!-- LOGO -->
+        <div class="navbar-brand-box" style="margin-left: 10px; margin-top: 10px!important;">
+          <a href="index.html" class="logo logo-dark">
+            <span>
+              <img src="../../../assets/images/orange.png" alt="" height="70">
+            </span>
+          </a>
+          <button type="button" class="btn btn-sm p-0 fs-3xl header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+            <i class="ri-record-circle-line"></i>
+          </button>
+        </div>
+
+        <div id="scrollbar">
+          <div class="container-fluid">
+            <ul class="navbar-nav" id="navbar-nav" style="margin-top: 50px;">
+              <li class="nav-item">
+                <a class="nav-link menu-link" routerLink="/home">
+                  <i class="ri-settings-6-line"></i> <span>Home</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu-link" routerLink="/dental">
+                  <i class="ri-settings-6-line"></i> <span>Routers List</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="customization" routerLink="/staff">
+                  <i class="ri-equalizer-line"></i> <span>Configurations List</span>
+                </a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" routerLink="/refConf">
+                  <i class="ri-html5-line"></i> <span>Reference configuration</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" routerLink="/logs">
+                  <i class="ri-rocket-line"></i> <span>Check Recent logs</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" routerLink="/stat">
+                  <i class="ri-layout-3-line"></i> <span>Recent Statistics</span>
+                </a>
+                <a class="nav-link menu-link" routerLink="/mpls">
+                  <i class="ri-layout-3-line"></i> <span>Display MPLS Network</span>
+                </a>
+                <a class="nav-link menu-link" routerLink="/testing">
+                  <i class="ri-layout-3-line"></i> <span>Start a test</span>
+                </a>
+                <a class="nav-link menu-link" routerLink="/conf">
+                  <i class="ri-layout-3-line"></i> <span>Router Configuration</span>
+                </a>
+                <a class="nav-link menu-link" routerLink="/logs">
+                  <i class="ri-layout-3-line"></i> <span>Explore logs</span>
+                </a>
+                <a class="nav-link menu-link" (click)="logout()" routerLink="/logout">
+                  <i class="ri-layout-3-line"></i> <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-background"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div *ngIf="isLoginPage()" style="width: 100%;">
+  <router-outlet></router-outlet>
+</div>
+<style>
+.root-container {
+  display: flex;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 250px; /* Largeur fixe pour la sidebar sur grands écrans */
+  height: 100vh; /* Sidebar occupe toute la hauteur de la fenêtre */
+  background-color: black;
+  position: fixed; /* Fixe pour que la sidebar reste visible au défilement */
+  z-index: 1; /* Met la sidebar au-dessus du contenu si besoin */
+  overflow-y: auto; /* Scrolling pour la sidebar si le contenu dépasse */
+  transition: transform 0.3s ease; /* Transition pour l'animation */
+  color: white!important;
+}
+
+/* Conteneur du contenu principal */
+.content-container {
+  margin-left: 250px; /* Espace pour la sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Largeur dynamique du contenu en tenant compte de la sidebar */
+  overflow-y: auto; /* Scrolling pour le contenu si nécessaire */
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%; /* Sidebar prend toute la largeur sur petits écrans */
+    position: absolute; /* Changer à absolute pour éviter la superposition */
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); /* Sidebar cachée par défaut */
+  }
+
+  #sidebar.open {
+    transform: translateX(0); /* Affiche la sidebar */
+  }
+
+  .content-container {
+    margin-left: 0; /* Pas de marge pour la sidebar */
+    width: 100%; /* Le contenu prend toute la largeur */
+  }
+}
+
+/* Bouton hamburger pour afficher/masquer la sidebar sur petits écrans */
+.sidebar-toggle {
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px!important;
+  z-index: 2; /* Assurez-vous qu'il soit au-dessus de la sidebar */
+}
+
+/* Afficher le bouton sur les petits écrans */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block; /* Affiche le bouton sur petits écrans */
+  }
+}
+
+ /* Structure de base en flexbox pour le wrapper global */
+.root-container {
+  display: flex;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  width: 100%; /* Prend toute la largeur */
+}
+
+/* Sidebar */
+app-side-nav {
+  width: 250px; /* Largeur fixe pour la sidebar sur grands écrans */
+  height: 100vh; /* Sidebar occupe toute la hauteur de la fenêtre */
+  background-color: black;
+  position: fixed; /* Fixe pour que la sidebar reste visible au défilement */
+  z-index: 1; /* Met la sidebar au-dessus du contenu si besoin */
+  overflow-y: auto; /* Scrolling pour la sidebar si le contenu dépasse */
+  transition: transform 0.3s ease; /* Transition pour l'animation */
+  color: white!important;
+}
+
+/* Conteneur du contenu principal */
+.content-container {
+  margin-left: 250px; /* Espace pour la sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Largeur dynamique du contenu en tenant compte de la sidebar */
+  overflow-y: auto; /* Scrolling pour le contenu si nécessaire */
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 768px) {
+  app-side-nav {
+    width: 100%; /* Sidebar prend toute la largeur sur petits écrans */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transform: translateX(-100%); /* Sidebar cachée par défaut */
+  }
+
+  app-side-nav.open {
+    transform: translateX(0); /* Affiche la sidebar */
+  }
+
+  .content-container {
+    margin-left: 0; /* Pas de marge pour la sidebar */
+    width: 100%; /* Le contenu prend toute la largeur */
+  }
+}
+
+
+/* Afficher le bouton sur les petits écrans */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block; /* Affiche le bouton sur petits écrans */
+  }
+}
+
+</style>

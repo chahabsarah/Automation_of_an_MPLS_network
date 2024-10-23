@@ -1,0 +1,31 @@
+@import '../assets/shared.scss';
+
+.clickable-icon {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.clickable-icon:hover {
+  color: #1976d2;
+}
+
+.cell-left {
+  text-align: left !important;
+  padding-left: 24px !important;
+}
+.cell-right {
+  text-align: right !important;
+}
+
+.cell-right-row {
+  text-align: right !important;
+  padding-right: 20px !important;
+}
+
+.id-hidden {
+  width: 0px !important;
+}
+.orange-background {
+    background-color: orange;
+}
+  
