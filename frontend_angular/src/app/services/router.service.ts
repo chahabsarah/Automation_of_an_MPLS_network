@@ -10,7 +10,7 @@ export class RouterService {
   private baseUrl = 'http://127.0.0.1:8000/checks/router';  // URL de votre API Django
   private ApiUrl = 'http://127.0.0.1:8000/config';  // URL de votre API Django
   private logsUrl = 'http://127.0.0.1:8000/logs/logs/all/';  // URL for logs API
-
+  private getLogUrl = 'http://localhost:8000/logs/recuperer-logs/';
   constructor(private http: HttpClient) { }
 
   getRouterR4(): Observable<any> {
@@ -135,5 +135,7 @@ export class RouterService {
     getAllLogs(): Observable<any[]> {
       return this.http.get<any[]>(`${this.logsUrl}`);
   }
-
+  getLogs(): Observable<any> {
+    return this.http.get(this.getLogUrl);
+  }
 }

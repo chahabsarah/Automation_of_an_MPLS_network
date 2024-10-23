@@ -39,7 +39,7 @@ export class LoginComponent {
       console.log('Tentative de connexion avec :', credentials); // Ajout de log
       this.authService.login(credentials)
         .then(() => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/stat']);
         })
         .catch(error => {
           console.error('Erreur de connexion:', error); // Ajout de log

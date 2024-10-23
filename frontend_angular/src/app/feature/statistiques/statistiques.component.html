@@ -1,4 +1,103 @@
+<div class="container_all">
+  <div class="stats-container">
+    <div class="stats-box text1">Errors: {{ errorCount }}</div>
+    <div class="stats-box text2">Warnings: {{ warningCount }}</div>
+    <div class="stats-box text3">SNMP: {{ snmpFailureCount }}</div>
+    <div class="stats-box text4">Craftd: {{ craftdFailureCount }}</div>
+  </div>
 
-<h4>Statistics:</h4>
-<p>Number of Errors: {{ errorCount }}</p>
-<p>Number of Warnings: {{ warningCount }}</p>
+  <div class="chart-container">
+
+
+    <div class="chart-row">
+      <div class="chart">
+        <canvas #errorRateChart></canvas> <!-- Error Rate Chart -->
+      </div>
+      <div class="chart">
+        <canvas #warningRateChart></canvas> <!-- Warning Rate Chart -->
+      </div>
+      <div class="chart">
+        <canvas #snmpFailureChart></canvas> <!-- SNMP Failure Chart -->
+      </div>
+    </div>
+    <div class="chart1">
+      <canvas #encompassingBarChart></canvas> <!-- Encompassing Bar Chart -->
+    </div>
+    <div class="chart-row">
+      <div class="chart">
+        <canvas #craftdFailureChart></canvas> <!-- Craftd Failure Chart -->
+      </div>
+      <div class="chart2">
+        <canvas #priorityChart></canvas> <!-- Main Error and Warning Chart -->
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .container_all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-between; /* Align boxes in a row with space between */
+    width: 100%; /* Full width of the container */
+    margin-bottom: 20px; /* Spacing below the stats container */
+  }
+
+  .stats-box {
+    background-color: black; /* Background color for all stats boxes */
+    color: white; /* Text color */
+    padding: 15px;
+    margin: 0 10px; /* Spacing between boxes */
+    border-radius: 5px; /* Rounded corners */
+    flex: 1; /* Each box takes equal space */
+    text-align: center; /* Center text */
+  }
+
+  .text1 { background-color: red; }
+  .text2 { background-color: turquoise; }
+  .text3 { background-color: yellow; color: black; } /* Dark text on light background */
+  .text4 { background-color: orange; }
+
+  .text1,.text2,.text3,.text4{
+    font-weight: bolder;
+  }
+  .chart-container {
+    width: 100%; /* Full width of the container */
+    display: flex;
+    flex-direction: column; /* Stack charts vertically */
+    align-items: center; /* Center charts */
+  }
+
+  .chart-row {
+    display: flex; /* Display charts in a row */
+    justify-content: space-around; /* Space them evenly */
+    width: 100%; /* Full width for the row */
+    margin: 15px 0; /* Spacing between rows */
+  }
+
+  .chart {
+    flex: 1; /* Each chart takes equal space */
+    max-width: 300px; /* Max width for each chart */
+    margin: 0 10px; /* Spacing between charts */
+  }
+  .chart1 {
+    flex: 1; /* Each chart takes equal space */
+    max-width: 800px; /* Max width for each chart */
+    margin: 0 10px; /* Spacing between charts */
+  }
+  .chart2 {
+    flex: 1; /* Each chart takes equal space */
+    max-width: 600px; /* Max width for each chart */
+    margin: 0 10px; /* Spacing between charts */
+  }
+  canvas {
+    width: 100% !important; /* Ensure canvas takes full width */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+
+</style>

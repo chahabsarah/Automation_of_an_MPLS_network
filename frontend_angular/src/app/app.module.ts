@@ -12,6 +12,8 @@ import { NavModule } from './nav/nav.module';
 
 //Feture Module
 import { FeatureModule } from './feature/feature.module';
+import { NgApexchartsModule } from 'ng-apexcharts'; // Import ApexChartsModule
+import { NgChartsModule } from 'ng2-charts'; // Ensure you import NgChartsModule here
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { FeatureModule } from './feature/feature.module';
     FlexLayoutModule,
     MaterialModule,
     FeatureModule,
+    
+
 
   ],
   providers: [],

@@ -1,7 +1,151 @@
 <div>
   <h2>Informations disque dur des Routeurs</h2>
 
-  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="hdDataJ1.length > 0" class="console-view">
+    <h3>Routeur J1</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Filesystem</th>
+          <th>Size</th>
+          <th>Used</th>
+          <th>Avail</th>
+          <th>Capacity</th>
+          <th>Mounted on</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let disk of hdDataJ1">
+          <td>{{ disk.filesystem }}</td>
+          <td>{{ disk.size }}</td>
+          <td>{{ disk.used }}</td>
+          <td>{{ disk.avail }}</td>
+          <td>{{ disk.capacity }}</td>
+          <td>{{ disk.mountedOn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="hdDataJ2.length > 0" class="console-view">
+    <h3>Routeur J2</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Filesystem</th>
+          <th>Size</th>
+          <th>Used</th>
+          <th>Avail</th>
+          <th>Capacity</th>
+          <th>Mounted on</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let disk of hdDataJ2">
+          <td>{{ disk.filesystem }}</td>
+          <td>{{ disk.size }}</td>
+          <td>{{ disk.used }}</td>
+          <td>{{ disk.avail }}</td>
+          <td>{{ disk.capacity }}</td>
+          <td>{{ disk.mountedOn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="hdDataJ3.length > 0" class="console-view">
+    <h3>Routeur J3</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Filesystem</th>
+          <th>Size</th>
+          <th>Used</th>
+          <th>Avail</th>
+          <th>Capacity</th>
+          <th>Mounted on</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let disk of hdDataJ3">
+          <td>{{ disk.filesystem }}</td>
+          <td>{{ disk.size }}</td>
+          <td>{{ disk.used }}</td>
+          <td>{{ disk.avail }}</td>
+          <td>{{ disk.capacity }}</td>
+          <td>{{ disk.mountedOn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="hdDataJ4.length > 0" class="console-view">
+    <h3>Routeur J4</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Filesystem</th>
+          <th>Size</th>
+          <th>Used</th>
+          <th>Avail</th>
+          <th>Capacity</th>
+          <th>Mounted on</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let disk of hdDataJ4">
+          <td>{{ disk.filesystem }}</td>
+          <td>{{ disk.size }}</td>
+          <td>{{ disk.used }}</td>
+          <td>{{ disk.avail }}</td>
+          <td>{{ disk.capacity }}</td>
+          <td>{{ disk.mountedOn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+  <style>
+    .console-view {
+      background-color: #1e1e1e;
+      color: orange;
+      font-family: "Courier New", Courier, monospace;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .console-view h3 {
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .console-view table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .console-view th, .console-view td {
+      border: 1px solid orange;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .console-view th {
+      background-color: orange;
+      color: white;
+    }
+
+    .console-view tr:nth-child(even) {
+      background-color: #333;
+    }
+  </style>
 
   <div *ngIf="hdDataJ1" class="console-view">
     <h3>Routeur J1</h3>
@@ -15,14 +159,14 @@
 
   <div *ngIf="hdDataJ3" class="console-view">
     <h3>Routeur J3</h3>
-    <pre>{{ hdDataJ3 }}</pre>
+    <pre>{{ hdDataJ3 | json }}</pre>
   </div>
 
   <div *ngIf="hdDataJ4" class="console-view">
     <h3>Routeur J4</h3>
-    <pre>{{ hdDataJ4 }}</pre>
+    <pre>{{ hdDataJ4 | json}}</pre>
   </div>
-</div>
+
 <style>
   .console-view {
     background-color: #1e1e1e; /* Couleur de fond similaire à celle d'une console */
@@ -32,6 +176,8 @@
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ajout d'un léger effet d'ombre */
+    overflow-y: auto; /* Enable horizontal scrolling */
+    max-height: 400px;
   }
 
   .console-view h3 {

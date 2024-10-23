@@ -1,41 +1,277 @@
 <div class="cpu">
   <h2>Informations CPU des Routeurs</h2>
 
-  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+
+    <!-- Routeur J1 -->
+    <div *ngIf="cpuDataJ1">
+      <h3>Routeur J1</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>PID</th>
+            <th>USERNAME</th>
+            <th>THR</th>
+            <th>PRI</th>
+            <th>NICE</th>
+            <th>SIZE</th>
+            <th>RES</th>
+            <th>STATE</th>
+            <th>TIME</th>
+            <th>WCPU</th>
+            <th>COMMAND</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let process of cpuDataJ1">
+            <td data-label="PID">{{ process.PID }}</td>
+            <td data-label="USERNAME">{{ process.USERNAME }}</td>
+            <td data-label="THR">{{ process.THR }}</td>
+            <td data-label="PRI">{{ process.PRI }}</td>
+            <td data-label="NICE">{{ process.NICE }}</td>
+            <td data-label="SIZE">{{ process.SIZE }}</td>
+            <td data-label="RES">{{ process.RES }}</td>
+            <td data-label="STATE">{{ process.STATE }}</td>
+            <td data-label="TIME">{{ process.TIME }}</td>
+            <td data-label="WCPU">{{ process.WCPU }}</td>
+            <td data-label="COMMAND">{{ process.COMMAND }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Routeur J2 -->
+    <div *ngIf="cpuDataJ2">
+      <h3>Routeur J2</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>PID</th>
+            <th>USERNAME</th>
+            <th>THR</th>
+            <th>PRI</th>
+            <th>NICE</th>
+            <th>SIZE</th>
+            <th>RES</th>
+            <th>STATE</th>
+            <th>TIME</th>
+            <th>WCPU</th>
+            <th>COMMAND</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let process of cpuDataJ2">
+            <td data-label="PID">{{ process.PID }}</td>
+            <td data-label="USERNAME">{{ process.USERNAME }}</td>
+            <td data-label="THR">{{ process.THR }}</td>
+            <td data-label="PRI">{{ process.PRI }}</td>
+            <td data-label="NICE">{{ process.NICE }}</td>
+            <td data-label="SIZE">{{ process.SIZE }}</td>
+            <td data-label="RES">{{ process.RES }}</td>
+            <td data-label="STATE">{{ process.STATE }}</td>
+            <td data-label="TIME">{{ process.TIME }}</td>
+            <td data-label="WCPU">{{ process.WCPU }}</td>
+            <td data-label="COMMAND">{{ process.COMMAND }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Routeur J3 -->
+    <div *ngIf="cpuDataJ3">
+      <h3>Routeur J3</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>PID</th>
+            <th>USERNAME</th>
+            <th>THR</th>
+            <th>PRI</th>
+            <th>NICE</th>
+            <th>SIZE</th>
+            <th>RES</th>
+            <th>STATE</th>
+            <th>TIME</th>
+            <th>WCPU</th>
+            <th>COMMAND</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let process of cpuDataJ3">
+            <td data-label="PID">{{ process.PID }}</td>
+        <td data-label="USERNAME">{{ process.USERNAME }}</td>
+        <td data-label="THR">{{ process.THR }}</td>
+        <td data-label="PRI">{{ process.PRI }}</td>
+        <td data-label="NICE">{{ process.NICE }}</td>
+        <td data-label="SIZE">{{ process.SIZE }}</td>
+        <td data-label="RES">{{ process.RES }}</td>
+        <td data-label="STATE">{{ process.STATE }}</td>
+        <td data-label="TIME">{{ process.TIME }}</td>
+        <td data-label="WCPU">{{ process.WCPU }}</td>
+        <td data-label="COMMAND">{{ process.COMMAND }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Routeur J4 -->
+    <div *ngIf="cpuDataJ4">
+      <h3>Routeur J4</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>PID</th>
+            <th>USERNAME</th>
+            <th>THR</th>
+            <th>PRI</th>
+            <th>NICE</th>
+            <th>SIZE</th>
+            <th>RES</th>
+            <th>STATE</th>
+            <th>TIME</th>
+            <th>WCPU</th>
+            <th>COMMAND</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let process of cpuDataJ4">
+            <td data-label="PID">{{ process.PID }}</td>
+        <td data-label="USERNAME">{{ process.USERNAME }}</td>
+        <td data-label="THR">{{ process.THR }}</td>
+        <td data-label="PRI">{{ process.PRI }}</td>
+        <td data-label="NICE">{{ process.NICE }}</td>
+        <td data-label="SIZE">{{ process.SIZE }}</td>
+        <td data-label="RES">{{ process.RES }}</td>
+        <td data-label="STATE">{{ process.STATE }}</td>
+        <td data-label="TIME">{{ process.TIME }}</td>
+        <td data-label="WCPU">{{ process.WCPU }}</td>
+        <td data-label="COMMAND">{{ process.COMMAND }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <div *ngIf="cpuDataJ1" class="console-view">
     <h3>Routeur J1</h3>
-    <pre>{{ cpuDataJ1 }}</pre>
+    <pre>{{ cpuDataJ1 | json }}</pre>
   </div>
 
   <div *ngIf="cpuDataJ2" class="console-view">
     <h3>Routeur J2</h3>
-    <pre>{{ cpuDataJ2 }}</pre>
+    <pre>{{ cpuDataJ2| json  }}</pre>
   </div>
 
   <div *ngIf="cpuDataJ3" class="console-view">
     <h3>Routeur J3</h3>
-    <pre>{{ cpuDataJ3 }}</pre>
+    <pre>{{ cpuDataJ3| json  }}</pre>
   </div>
 
   <div *ngIf="cpuDataJ4" class="console-view">
     <h3>Routeur J4</h3>
-    <pre>{{ cpuDataJ4 }}</pre>
+    <pre>{{ cpuDataJ4 | json }}</pre>
   </div>
-</div>
 <style>
   .cpu{
     width: 70%;
     margin: 0 auto;
   }
+  /* Styles de la table */
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable horizontal scrolling */
+  max-height: 400px;
+}
+
+thead {
+  background-color: #333;
+  color: white;
+}
+
+th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  background-color: #ff6600; /* orange */
+  color: white;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+h3 {
+  color: #333;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+/* Styles pour la responsivité */
+@media screen and (max-width: 768px) {
+  table, th, td {
+    display: block;
+    width: 100%;
+  }
+
+  th, td {
+    box-sizing: border-box;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: none;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+  }
+}
+
   .console-view {
     background-color: #1e1e1e; /* Couleur de fond similaire à celle d'une console */
     color: orange; /* Texte vert, typique des interfaces de console */
     font-family: "Courier New", Courier, monospace; /* Police de caractères type console */
     padding: 10px;
+    margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ajout d'un léger effet d'ombre */
+    max-width: 80%; /* Set a maximum width */
+    overflow-y: auto; /* Enable horizontal scrolling */
+    max-height: 400px;
   }
 
   .console-view h3 {

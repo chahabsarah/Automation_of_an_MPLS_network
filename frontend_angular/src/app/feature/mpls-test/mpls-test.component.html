@@ -1,11 +1,15 @@
-<div *ngIf="mplsSummaryData && mplsSummaryData.length > 0">
+<div *ngIf="mplsSummaryData && mplsSummaryData.length > 0" class="mpls-container">
   <h3>Résumé des routes MPLS</h3>
-  <table>
+  <table class="mpls-table">
     <thead>
       <tr>
         <th>Label</th>
         <th>Next Hop</th>
         <th>Interface Sortante</th>
+        <th>Type</th>
+        <th>Durée</th>
+        <th>Métrique</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -13,12 +17,82 @@
         <td>{{ route.label }}</td>
         <td>{{ route.nextHop }}</td>
         <td>{{ route.outgoingInterface }}</td>
+        <td>{{ route.type }}</td>
+        <td>{{ route.duration }}</td>
+        <td>{{ route.metric }}</td>
+        <td>{{ route.action }}</td>
       </tr>
     </tbody>
   </table>
 </div>
+
 <div *ngIf="errorMessage">
-  <p style="color: red;">{{ errorMessage }}</p>
+  <p class="error-message">{{ errorMessage }}</p>
 </div>
 
-<pre>{{ consoleOutput }}</pre>
+<!-- Styled console output -->
+<pre class="console-output">
+  {{ consoleOutput }}
+</pre>
+<style>
+  /* Container for the MPLS summary */
+.mpls-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.mpls-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.mpls-table th,
+.mpls-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.mpls-table th {
+  background-color: orange; /* Green header */
+  color: white;
+}
+
+.mpls-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+.mpls-table tr:hover {
+  background-color: #ddd; /* Hover effect */
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Console output styling */
+.console-output {
+  background-color: #282c34;
+  color: orange;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+  white-space: pre-wrap; /* Maintain whitespace */
+  word-wrap: break-word; /* Break long words */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .mpls-table {
+    font-size: 14px; /* Smaller font size on small screens */
+  }
+}
+
+</style>

@@ -12,8 +12,12 @@ export class BackendServices {
 
 configureRouter(data: any): Observable<any> {
     const url = 'http://127.0.0.1:8000/myapp/configure-router/';
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Adjust this as needed
+      'Content-Type': 'application/json'
+    });
 
-    return this.http.post<any>(url, data);
+    return this.http.post<any>(url, data, { headers });
   }
 
   // GET all configurations
@@ -31,24 +35,41 @@ getConfigurationById(id: number): Observable<any> {
   // DELETE API
 deleteConfiguration(key: number): Observable<any> {
     const url = `http://127.0.0.1:8000/myapp/configure-router/delete/${key}`;
-    return this.http.delete<any>(url);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Adjust this as needed
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete<any>(url, { headers });
   }
 
 getAllNetworkConfigurations(): Observable<any[]> {
     const url = 'http://127.0.0.1:8000/myapp/network-config/all/';
+
     return this.http.get<any[]>(url);
   }
 deleteNetworkConfiguration(id: number): Observable<any> {
     const url = `http://127.0.0.1:8000/myapp/delete-router-config/${id}/`;
-    return this.http.delete<any>(url);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Adjust this as needed
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete<any>(url, { headers });
   }
 Networkconfiguration(data: any): Observable<any> {
     const url = 'http://127.0.0.1:8000/myapp/my-form/';
-    return this.http.post<any>(url, data);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(url, data, { headers });
 }
 getRouterConfigData(id: number): Observable<any> {
   const url = `http://127.0.0.1:8000/myapp/router/${id}/`;
-  return this.http.post<any>(url, {});
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Adjust this as needed
+    'Content-Type': 'application/json'
+  });
+  return this.http.post<any>(url,{ headers });
 }
 
 // Store token in local storage upon successful login

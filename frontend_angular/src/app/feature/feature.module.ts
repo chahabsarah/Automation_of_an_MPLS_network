@@ -117,7 +117,7 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
     MatSortModule,
     MatTreeModule,
     MatProgressBarModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

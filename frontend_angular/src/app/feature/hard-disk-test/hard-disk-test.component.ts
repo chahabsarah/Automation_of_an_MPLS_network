@@ -4,13 +4,13 @@ import { RouterService } from '../../services/router.service';
 @Component({
   selector: 'app-hard-disk-test',
   templateUrl: './hard-disk-test.component.html',
-  styleUrl: './hard-disk-test.component.css'
+  styleUrls: ['./hard-disk-test.component.css']
 })
 export class HardDiskTestComponent implements OnInit {
-  hdDataJ1: any;
-  hdDataJ2: any;
-  hdDataJ3: any;
-  hdDataJ4: any;
+  hdDataJ1: any[] = [];
+  hdDataJ2: any[] = [];
+  hdDataJ3: any[] = [];
+  hdDataJ4: any[] = [];
   errorMessage: string | null = null;
 
   constructor(private routerService: RouterService) {}
@@ -21,23 +21,31 @@ export class HardDiskTestComponent implements OnInit {
 
   getHDData(): void {
     this.routerService.getDiskJ1().subscribe({
-      next: (data) => this.hdDataJ1 = data.storage,
+      next: (data) => this.hdDataJ1 = this.parseDiskData(data.storage),
       error: (error) => this.handleError(error)
     });
 
     this.routerService.getDiskJ2().subscribe({
-      next: (data) => this.hdDataJ2 = data.storage,
+      next: (data) => this.hdDataJ2 = this.parseDiskData(data.storage),
       error: (error) => this.handleError(error)
     });
 
     this.routerService.getDiskJ3().subscribe({
-      next: (data) => this.hdDataJ3 = data.storage,
+      next: (data) => this.hdDataJ3 = this.parseDiskData(data.storage),
       error: (error) => this.handleError(error)
     });
 
     this.routerService.getDiskJ4().subscribe({
-      next: (data) => this.hdDataJ4 = data.storage,
+      next: (data) => this.hdDataJ4 = this.parseDiskData(data.storage),
       error: (error) => this.handleError(error)
+    });
+  }
+
+  parseDiskData(data: string): any[] {
+    const lines = data.trim().split('\n').slice(1); // Ignore the header line
+    return lines.map(line => {
+      const [filesystem, size, used, avail, capacity, mountedOn] = line.trim().split(/\s+/);
+      return { filesystem, size, used, avail, capacity, mountedOn };
     });
   }
 

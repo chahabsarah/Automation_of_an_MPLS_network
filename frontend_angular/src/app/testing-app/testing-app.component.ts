@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-testing-app',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './testing-app.component.css'
 })
 export class TestingAppComponent {
-constructor( private router : Router){}
+constructor( private router : Router, private logService : RouterService){}
   interface(){
     this.router.navigate(['/interfacePingTest'])
   }
@@ -25,5 +26,16 @@ constructor( private router : Router){}
   }
   mpls(){
     this.router.navigate(['/mplsToTest'])
+  }
+  logs() {
+    this.logService.getLogs().subscribe(
+      response => {
+        console.log('Logs récupérés:', response);
+        this.router.navigate(['/logs'])
+      },
+      error => {
+        console.error('Erreur lors de la récupération des logs:', error);
+      }
+    );
   }
 }
