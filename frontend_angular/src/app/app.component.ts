@@ -23,4 +23,12 @@ logout() {
 
   this.router.navigate(['/login']);
 }
+isAdmin(): boolean {
+  return localStorage.getItem('is_admin') === 'true';
+}
+
+// Method to check if the user is a technician
+isTechnician(): boolean {
+  return localStorage.getItem('is_technician') === 'true';
+}
 }

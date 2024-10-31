@@ -52,17 +52,22 @@
                 <a class="nav-link menu-link" routerLink="/mpls">
                   <i class="ri-layout-3-line"></i> <span>Display MPLS Network</span>
                 </a>
-                <a class="nav-link menu-link" routerLink="/testing">
-                  <i class="ri-layout-3-line"></i> <span>Start a test</span>
-                </a>
-                <a class="nav-link menu-link" routerLink="/conf">
-                  <i class="ri-layout-3-line"></i> <span>Router Configuration</span>
-                </a>
+                <li class="nav-item" *ngIf="!isTechnician()">
+                  <a class="nav-link menu-link" routerLink="/testing">
+                    <i class="ri-layout-3-line"></i> <span>Start a test</span>
+                  </a>
+                </li>
+
+                <li class="nav-item" *ngIf="!isTechnician()">
+                  <a class="nav-link menu-link" routerLink="/conf">
+                    <i class="ri-layout-3-line"></i> <span>Router Configuration</span>
+                  </a>
+                </li>
 
                 <a class="nav-link menu-link" (click)="logout()" routerLink="/logout">
                   <i class="ri-layout-3-line"></i> <span>Logout</span>
                 </a>
-              </li>
+      
             </ul>
           </div>
         </div>

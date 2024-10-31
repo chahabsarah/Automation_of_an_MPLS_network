@@ -1,35 +1,41 @@
-<div>
-  <h2>Informations Mémoire des Routeurs</h2>
+<div *ngIf="memoryData.length > 0">
+  <h3 style="font-size: 24px; font-weight: bold;">Memory Data</h3>
+  <div *ngFor="let data of memoryData">
+    <pre style="font-size: 18px; font-weight: bold; background-color: #f4f4f4; padding: 10px;text-align:left; border: 1px solid #ddd;">
+      {{ getFirstNineLines(data.memory) }}
+    </pre>
+  </div>
 
-  <div *ngFor="let router of ['J1', 'J2', 'J3', 'J4']">
-    <div *ngIf="memoData[router]">
-      <h3>Routeur {{ router }}</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Attribut</th>
-            <th>Valeur</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let memory of [
-            { label: 'Total memory', value: memoData[router].totalMemory },
-            { label: 'Reserved memory', value: memoData[router].reservedMemory },
-            { label: 'Wired memory', value: memoData[router].wiredMemory },
-            { label: 'Active memory', value: memoData[router].activeMemory },
-            { label: 'Inactive memory', value: memoData[router].inactiveMemory },
-            { label: 'Cache memory', value: memoData[router].cacheMemory },
-            { label: 'Free memory', value: memoData[router].freeMemory }
-          ]">
-            <td>{{ memory.label }}</td>
-            <td>{{ memory.value }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <h3 style="font-size: 24px; font-weight: bold;">Console View</h3>
+  <div style="background-color: #272822; color: orange; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 16px;">
+    <div *ngFor="let data of memoryData">
+      <p>{{ data.memory }}</p>
     </div>
   </div>
-
-  <div *ngIf="errorMessage" class="error-message">
-    <p>{{ errorMessage }}</p>
-  </div>
 </div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<style>
+  .memory-data {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .console-view {
+    background-color: #272822;
+    color: orange;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+</style>
