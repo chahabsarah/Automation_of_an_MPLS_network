@@ -1,9 +1,7 @@
 from django.http import HttpResponse
 from netmiko import ConnectHandler
 from django.http.response import JsonResponse
-import logging
 
-logger = logging.getLogger(__name__)
 
 
 
@@ -244,6 +242,88 @@ def router_system_memory_j2(request):
         }, status=500)
 
 
+def router_system_memory_j1(request):
+
+    j1 = {
+    'device_type': 'juniper_junos_telnet',
+    'host': '127.0.0.1',
+    'port': 5000,
+    'username': 'admin',
+    'password': 'root123',
+}
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j1)
+        
+        output = connection.send_command('show system memory')
+        return JsonResponse({
+            'memory': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)
+
+
+
+def router_system_memory_j4(request):
+
+    j4 = {
+        'device_type': 'juniper_junos_telnet',
+        'host': '127.0.0.1',
+        'port': 5002,
+        'username': 'admin',
+        'password': 'root123',
+        'timeout': 60, 
+
+    }
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j4)
+        
+        output = connection.send_command('show system memory')
+        return JsonResponse({
+            'memory': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)
+
+
+def router_system_memory_j3(request):
+
+    j3 = {
+        'device_type': 'juniper_junos_telnet',
+        'host': '127.0.0.1',
+        'port': 5003,
+        'username': 'admin',
+        'password': 'root123',
+}
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j3)
+        
+        output = connection.send_command('show system memory')
+        return JsonResponse({
+            'memory': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)
+
+
+
 def router_system_storage_j2(request):
 
     j2 = {
@@ -294,30 +374,6 @@ def router_ospf_j2(request):
             'error': str(e)
         }, status=500)
 
-
-def router_bgp_j2(request):
-    j2 = {
-        'device_type': 'juniper_junos_telnet',
-        'host': '127.0.0.1',
-        'port': 5001,
-        'username': 'admin',
-        'password': 'root123',
-}
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j2)
-        
-        output = connection.send_command('show configuration protocols bgp')
-        return JsonResponse({
-            'bgp': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
 
 # routeur j3
 def router_mpls_route_table_j3(request):
@@ -391,32 +447,6 @@ def router_system_processes_j3(request):
         output = connection.send_command('show system processes extensive')
         return JsonResponse({
             'proc': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
-
-
-def router_system_memory_j3(request):
-
-    j3 = {
-        'device_type': 'juniper_junos_telnet',
-        'host': '127.0.0.1',
-        'port': 5003,
-        'username': 'admin',
-        'password': 'root123',
-}
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j3)
-        
-        output = connection.send_command('show system memory')
-        return JsonResponse({
-            'memory': output,
         })
         
     except Exception as e:
@@ -501,30 +531,6 @@ def router_ospf_j3(request):
         }, status=500)
 
 
-def router_bgp_j3(request):
-    j3 = {
-        'device_type': 'juniper_junos_telnet',
-        'host': '127.0.0.1',
-        'port': 5003,
-        'username': 'admin',
-        'password': 'root123',
-}
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j3)
-        
-        output = connection.send_command('show configuration protocols bgp')
-        return JsonResponse({
-            'bgp': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
-
 # routeur j4
 
 def router_interfaces_j4(request):
@@ -570,31 +576,6 @@ def router_ospf_j4(request):
         output = connection.send_command('show configuration protocols ospf')
         return JsonResponse({
             'ospf': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
-
-def router_bgp_j4(request):
-
-    j4 = {
-        'device_type': 'juniper_junos_telnet',
-        'host': '127.0.0.1',
-        'port': 5002,
-        'username': 'admin',
-        'password': 'root123',
-    }
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j4)
-        
-        output = connection.send_command('show configuration protocols bgp')
-        return JsonResponse({
-            'bgp': output,
         })
         
     except Exception as e:
@@ -683,33 +664,6 @@ def router_system_processes_j4(request):
             'error': str(e)
         }, status=500)
 
-
-def router_system_memory_j4(request):
-
-    j4 = {
-        'device_type': 'juniper_junos_telnet',
-        'host': '127.0.0.1',
-        'port': 5002,
-        'username': 'admin',
-        'password': 'root123',
-        'timeout': 60, 
-
-    }
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j4)
-        
-        output = connection.send_command('show system memory')
-        return JsonResponse({
-            'memory': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
 
 
 def router_system_storage_j4(request):
@@ -843,32 +797,6 @@ def router_system_processes_j1(request):
         }, status=500)
 
 
-def router_system_memory_j1(request):
-
-    j1 = {
-    'device_type': 'juniper_junos_telnet',
-    'host': '127.0.0.1',
-    'port': 5000,
-    'username': 'admin',
-    'password': 'root123',
-}
-    connection = None
-    output = {}
-
-    try:
-        connection = ConnectHandler(**j1)
-        
-        output = connection.send_command('show system memory')
-        return JsonResponse({
-            'memory': output,
-        })
-        
-    except Exception as e:
-        return JsonResponse({
-            'error': str(e)
-        }, status=500)
-
-
 def router_system_storage_j1(request):
 
     j1 = {
@@ -947,3 +875,81 @@ def router_bgp_j1(request):
         }, status=500)
 
 
+
+def router_bgp_j2(request):
+    j2 = {
+        'device_type': 'juniper_junos_telnet',
+        'host': '127.0.0.1',
+        'port': 5001,
+        'username': 'admin',
+        'password': 'root123',
+}
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j2)
+        
+        output = connection.send_command('show configuration protocols bgp')
+        return JsonResponse({
+            'bgp': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)
+
+
+
+
+def router_bgp_j3(request):
+    j3 = {
+        'device_type': 'juniper_junos_telnet',
+        'host': '127.0.0.1',
+        'port': 5003,
+        'username': 'admin',
+        'password': 'root123',
+}
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j3)
+        
+        output = connection.send_command('show configuration protocols bgp')
+        return JsonResponse({
+            'bgp': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)
+
+
+
+def router_bgp_j4(request):
+
+    j4 = {
+        'device_type': 'juniper_junos_telnet',
+        'host': '127.0.0.1',
+        'port': 5002,
+        'username': 'admin',
+        'password': 'root123',
+    }
+    connection = None
+    output = {}
+
+    try:
+        connection = ConnectHandler(**j4)
+        
+        output = connection.send_command('show configuration protocols bgp')
+        return JsonResponse({
+            'bgp': output,
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'error': str(e)
+        }, status=500)

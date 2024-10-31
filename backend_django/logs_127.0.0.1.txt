@@ -1,18 +1,97 @@
-13:28:51 - Oct 23 13:00:19   /kernel: WARNING: / was not properly dismounted
-13:28:51 - Oct 23 13:00:22   cosd[1337]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:00:23   craftd[1327]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:00:24   jddosd[1355]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
-13:28:51 - Oct 23 13:00:38   craftd[1472]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:00:43   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:00:48   craftd[1478]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:27:11   /kernel: WARNING: / was not properly dismounted
-13:28:51 - Oct 23 13:27:15   jddosd[1361]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
-13:28:51 - Oct 23 13:27:18   pkid[1363]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:27:18   craftd[1333]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:27:18   craftd[1333]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:27:18   mib2d[1336]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:27:19   pfed: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:27:20   bfdd[1351]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
-13:28:51 - Oct 23 13:27:26   craftd[1369]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:27:32   craftd[1377]: fatal error, failed to open craft device:  ZM-^H
-13:28:51 - Oct 23 13:27:37   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:30:20   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 12:30:23   pfed: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:23   craftd[1322]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:23   craftd[1322]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:30:24   bfdd[1340]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:27   dfcd[1343]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:27   mib2d[1325]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:27   jddosd[1350]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 12:30:27   l2ald[1327]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:30:38   craftd[1359]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:30:43   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:30:48   craftd[1474]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:43:18   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 12:43:25   jddosd[1347]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 12:43:26   pkid[1349]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:26   bfdd[1337]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:27   l2ald[1324]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:35   cosd[1329]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:37   mib2d[1322]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:37   pfed: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 12:43:38   craftd[1319]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:43:44   craftd[1472]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:43:49   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 12:43:54   craftd[1474]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:00:24   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 13:00:28   craftd[1333]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:00:30   jddosd[1361]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 13:00:37   alarmd[1332]: shutting down craftd connection: craftd ipc pipe read error
+12:25:15 - Oct 23 13:00:46   craftd[1377]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:00:51   craftd[1475]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:00:56   craftd[1478]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:27:10   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 13:27:13   craftd[1319]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 13:27:13   craftd[1319]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:27:15   jddosd[1347]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 13:27:31   craftd[1356]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:27:36   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 13:27:41   craftd[1474]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 15:43:14   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 15:43:20   pkid[1349]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 15:43:20   craftd[1319]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 15:43:20   craftd[1319]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 15:43:28   mib2d[1322]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 15:43:29   l2ald[1324]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 15:43:32   pfed: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 15:43:32   jddosd[1347]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 15:43:58   craftd[1359]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 15:44:05   craftd[1360]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 15:44:11   craftd[1474]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 15:44:16   craftd[1475]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:12:56   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 16:13:03   craftd[1318]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:13:03   craftd[1318]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:13:04   jddosd[1346]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 16:13:06   pkid[1348]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:13:08   bfdd[1336]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:13:07   dfcd[1339]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:13:35   craftd[1357]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:13:42   craftd[1472]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:13:47   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:36:51   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 16:36:54   pkid[1360]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:36:55   bfdd[1348]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:36:54   craftd[1330]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:36:54   craftd[1330]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:36:56   jddosd[1358]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 16:37:11   craftd[1370]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:37:16   craftd[1389]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:37:21   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:49:50   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 23 16:49:54   craftd[1325]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:49:54   craftd[1325]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:49:55   jddosd[1353]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 23 16:49:55   pkid[1355]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:49:58   dfcd[1346]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 23 16:50:06   craftd[1361]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:50:11   craftd[1477]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 23 16:50:16   craftd[1478]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 11:55:35   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 31 11:55:38   l2ald[1324]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 11:55:38   craftd[1319]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 11:55:38   craftd[1319]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 11:55:39   pkid[1349]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 11:55:41   jddosd[1347]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 31 11:55:53   craftd[1357]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 11:56:01   craftd[1473]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 11:56:06   craftd[1474]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 12:16:31   /kernel: WARNING: / was not properly dismounted
+12:25:15 - Oct 31 12:16:33   jddosd[1369]: DDOS_RTSOCK_FAILURE: Failed to get system global configuration information, error=2
+12:25:15 - Oct 31 12:16:34   cosd[1351]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 12:16:34   pkid[1371]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 12:16:34   craftd[1341]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 12:16:34   craftd[1341]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 12:16:35   bfdd[1359]: LIBJSNMP_NS_LOG_WARNING: WARNING: Warning: Failed to connect to the agentx master agent (/var/run/snmpd_agentx): Unknown host (/var/run/snmpd_agentx) (No such file or directory)
+12:25:15 - Oct 31 12:16:49   craftd[1381]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 12:16:54   craftd[1472]: fatal error, failed to open craft device:  ZM-^H
+12:25:15 - Oct 31 12:16:59   craftd[1473]: fatal error, failed to open craft device:  ZM-^H

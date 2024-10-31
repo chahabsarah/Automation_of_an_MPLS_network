@@ -448,7 +448,6 @@ class RegisterView(generics.CreateAPIView):
         # Save the new user
         user = serializer.save()
         return Response({'success': True, 'message': 'Signup successful'}, status=status.HTTP_201_CREATED)
-
 class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
     permission_classes = [AllowAny]
@@ -462,8 +461,16 @@ class LoginView(TokenObtainPairView):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            # Générer le token d'accès et le token de rafraîchissement
+            # Generate access and refresh tokens
             access = AccessToken.for_user(user)
-            return Response({'access': str(access)}, status=status.HTTP_200_OK)
+
+            # You can also include user roles or permissions in the response
+            response_data = {
+                'access': str(access),
+                'is_admin': user.is_superuser and user.is_staff, 
+                'is_technician': not user.is_superuser and not user.is_staff
+            }
+            return Response(response_data, status=status.HTTP_200_OK)
 
         return Response({'error': 'Nom d utilisateur ou mot de passe incorrect'}, status=status.HTTP_400_BAD_REQUEST)
+

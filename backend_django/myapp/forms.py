@@ -13,8 +13,8 @@ class NetworkConfigurationForm(forms.ModelForm):
         exclude = ['status','router_key']  # Exclude the status field
 
 class SignUpForm(forms.ModelForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput, max_length=191)
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput ,max_length=191)
 
     class Meta:
         model = SignUp
@@ -39,5 +39,5 @@ class SignUpForm(forms.ModelForm):
     
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=150)
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput,max_length=191)
 
